@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(5, 7, 52);
+        min-height: 900px;
+    }
+    
+    .login{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        margin-top: 50px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px grey;
+    }
+    .login_head{
+        display: flex;
+        justify-content: center;
+        margin-top: none;
+        color: rgb(5, 7, 52);
+        font-weight: 900;
+    
+        
+    }
+    .login_input{
+        width: 80%;
+        height: 40px;
+        margin-bottom: 20px;
+        border: none;
+        background-color: rgb(218, 218, 218);
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 5px;
+        padding-left: 10px;
+    
+    
+    }
+    .login_input:focus{
+        outline: none;
+    }
+    .login_input_container{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .login_button_container{
+        display: flex;
+        justify-content: center;
+    }
+    .login_button{
+        width: 50%;
+        height: 40px;
+        border: none;
+        color: white;
+        background-color: rgb(5, 7, 52);
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+    
+    }
+    .login_button:hover{
+        background-color:  rgb(37, 131, 255);
+    }
+    .login_notuser{
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 600;
+        
+    }
+    .login_signup_out{
+        margin: 0%;
+        padding: 0%;
+        text-align: center;
+        text-decoration: none;
+    
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(81, 37, 255);
+    
+    }</style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h2 class="login_head"> Style Point</h2>
+            <h2 class="login_head">Log in</h2>
+            <form action="">
+                <div class="login_input_container"><input  type="email" name="email" id="email" class="login_input" autoComplete="off" placeholder="email"/></div>
+                <div class="email error"></div>
+                 
+                <div class="login_input_container"><input  type="password" name="password" id="password" class="login_input" autoComplete="off"placeholder="password"/></div>
+                <div class="password error"></div>
+                <div class="login_button_container"><button class="login_button" >Login</button></div>
+            </form>
+    
+            <h2 class="login_notuser">Not an user?</h2>
+            <a class="login_signup_out" href="/signup1"><h4 class="login_signup">Sign Up here</h4></a>
+            
+            </div>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        const emailError = document.querySelector('.email.error');
+        const passwordError = document.querySelector('.password.error');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          // reset errors
+          emailError.textContent = '';
+          passwordError.textContent = '';
+          // get values
+          const email = form.email.value;
+          const password = form.password.value;
+          try {
+            const res = await fetch('/login', { 
+              method: 'POST', 
+              body: JSON.stringify({ email, password }),
+              headers: {'Content-Type': 'application/json'}
+            });
+            const data = await res.json();
+            console.log(data);
+            if (data.errors) {
+              emailError.textContent = data.errors.email;
+              passwordError.textContent = data.errors.password;
+            }
+            if (data.user) {
+              location.assign('/home');
+            }
+          }
+          catch (err) {
+            console.log(err);
+          }
+        });
+      </script>
+
+      
+
+</body>
+</html>

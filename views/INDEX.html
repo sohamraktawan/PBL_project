@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --color-black: #131313;
+        --color-white: #ffffff;
+        --color-light: #f5f3f3;
+        --color-navbar:rgba(0,0,0,0.8);
+      }
+      #logo {
+        filter: invert(100%);
+      }
+      img{
+          padding-bottom: 10px;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      nav {
+        position: fixed;
+        background-color: var(--color-navbar);
+        color: var(--color-light);
+        width: 100%;
+        height: 45px;
+        font-size: 12pt;
+      }
+      ul {
+        width: 80%;
+        display: flex;
+        margin: auto;
+        padding: 10px 80px;
+      }
+      li {
+        list-style: none;
+        margin-left: 60px;
+      }
+      li a {
+        text-decoration: none;
+        color: #ffffffcf;
+      }
+      li a:hover {
+        color: white;
+      }
+      main {
+        padding-top: 45px;
+      }
+      #bannerone {
+        background-image: url(/images/153550.jpg);
+        background-color: black;
+        color: white;
+        background-size: cover;
+        height: 90vh;
+        background-position-y: -150px;
+        padding-top: 150px;
+        margin-bottom: 10px;
+        z-index: -1;
+      }
+      .banner > * {
+        display: flex;
+        justify-content: center;
+      }
+      .banner h1 {
+        font-size: 40pt;
+      }
+      .banner h4 {
+        font-size: 26pt;
+        font-weight: lighter;
+      }
+      .banner a {
+        font-size: 16pt;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      #bannertwo {
+        /* background-image: url(/images/Do-I-need-a-Digital-Portfolio-for-an-Interview.jpg); */
+        background-color: black;
+        color: white;
+        background-size: cover;
+        height: 90vh;
+        background-position-y: -150px;
+        padding-top: 50px;
+        margin-bottom: 10px;
+        z-index: -1;
+
+      }
+      .category {
+        display: flex;
+      }
+      .category .box {
+        text-align: center;
+        height: 70vh;
+        width: 50%;
+        margin: 10px;
+        background-size: cover;
+        padding-top: 150px;
+        color: black;
+        background-color: var(--color-light);
+      }
+      .category .box a {
+        text-decoration: none;
+        font-size: 14pt;
+        padding-top: 20px;
+      }
+      #box1 {
+          padding-top: 80px;
+      }
+     
+      #box2 {
+        /* background-image: url(/images/update_your_online_portfolio.png); */
+        background-size:cover;
+        color:black
+      }
+      #box3 {
+          /* background-image: url(/images/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-1920x1080-1432.jpg); */
+          z-index: -1;
+          color: black;
+          opacity: 0.9;
+      }
+    
+      .bluelink > a {
+        padding-top: 30px;
+        color: #2997ff;
+        letter-spacing: inherit;
+      }
+      .bluelink > a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        letter-spacing: inherit;
+      }
+      hr {
+        margin-top: 50px;
+        width: 75%;
+        margin-left: 12.5%;
+      }
+      .message {
+        text-align: center;
+        padding: 40px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navigation -->
+    <header>
+      <nav>
+        <ul>
+          <li id="logo">
+            <a href="/"
+              ><img src="/portfolio (1).png" width="30" height="30"
+            /></a>
+          </li> 
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- two banners with the portfolio and resume link -->
+      <!-- for portfolio -->
+      <div class="banner" id="bannerone">
+        <h1>Assemble your best work</h1>
+        <h1>in a modern and professionally designed portfolio</h1>
+        <p class="bluelink"><a href="/choose">Get Started ></a></p>
+      </div>
+      <!-- for resume -->
+      <div class="banner" id="bannertwo">
+        <h1>Be Ready</h1>
+        <h1>for your job/internship with your resume</h1>
+        <p class="bluelink"><a href="/choose
+          ">Get Started ></a></p>
+      </div>
+
+      <!-- features in the grid -->
+      <!-- for sign up -->
+      <div class="category">
+        <div class="box" id="box1">
+          <h1>Keep your record</h1>
+          <h4>save the files you created in your profile</h4>
+          <p class="bluelink"><a href="/signup1">Sign up ></a></p>
+          <!-- <img src="/images/images (3).jpeg" alt=""> -->
+        </div>
+
+        <!-- for choosing correct template -->
+        <div class="box" id="box2">
+          <h1>Choose the correct</h1>
+          <h4>template that match your profile</h4>
+          <p class="bluelink"><a href="/choose">Learn more ></a></p>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- to convert to any format -->
+        <div class="box" id="box3">
+          <h1>Convert your data</h1>
+          <h4>to any format with one click</h4>
+          <p class="bluelink"><a href="/">Learn more ></a></p>
+        </div>
+        <!-- learn about portfolio and resume -->
+        <div class="box" id="box4">
+          <h1>Learn</h1>
+          <h3>About the Portfolio and Resume</h3>
+          <p class="bluelink"><a href="/learn">more ></a></p>
+        </div>
+      </div>
+      <hr />
+      <div class="message">
+        <h1>Draw the attention</h1>
+        <h1>it deserves with our website</h1>
+      </div>
+    </main>
+    <footer>
+      <p>Developed by students of PICT</p>
+      <p>pblpict2021@gmail.com</p>
+    </footer>
+  </body>
+</html>
